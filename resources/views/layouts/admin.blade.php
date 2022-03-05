@@ -10,20 +10,19 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-   
 
-   
+
+
 
     <!-- Styles -->
-   
+
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
   <!-- Nucleo Icons -->
-
     <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
 
     <link href="{{ asset('admin/css/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('admin/css/material-dashboard.css') }}" rel="stylesheet">
-   
+
 
 </head>
 <body>

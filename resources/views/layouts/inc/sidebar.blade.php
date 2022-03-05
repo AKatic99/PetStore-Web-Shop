@@ -17,16 +17,28 @@
             <span class="nav-link-text ms-1">Admin panel</span>
           </a>
         </li>
-        <li class="nav-item {{ (Request::is('categories')) ? 'active':'' }}">
-          <a class="nav-link" href="{{ url('categories') }}">
+          <li class="nav-item {{ (Request::is('categories')) ? 'active':'' }}">
+              <a class="nav-link" href="{{ url('categories') }}">
+                  <i class="material-icons"></i>
+                  <p>Kategorija</p>
+              </a>
+          </li>
+          <li class="nav-item {{ Request::is('add-category') ? 'active':'' }}">
+              <a class="nav-link" href="{{ url('add-category') }}">
+                  <i class="material-icons"></i>
+                  <p>Dodaj kategoriju</p>
+              </a>
+          </li>
+        <li class="nav-item {{ (Request::is('subcategories')) ? 'active':'' }}">
+          <a class="nav-link" href="{{ url('subcategories') }}">
             <i class="material-icons"></i>
-            <p>Kategorija</p>
+            <p>Podkategorija</p>
           </a>
        </li>
-       <li class="nav-item {{ Request::is('add-category') ? 'active':'' }}">
-          <a class="nav-link" href="{{ url('add-category') }}">
+       <li class="nav-item {{ Request::is('add-subcategory') ? 'active':'' }}">
+          <a class="nav-link" href="{{ url('add-subcategory') }}">
             <i class="material-icons"></i>
-            <p>Dodaj kategoriju</p>
+            <p>Dodaj podkategoriju</p>
           </a>
        </li>
        <li class="nav-item {{ (Request::is('products')) ? 'active':'' }}">
@@ -41,74 +53,13 @@
             <p>Dodaj proizvod</p>
           </a>
        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/tables.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Tables</span>
-          </a>
-        </li>
-       <!-- <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/billing.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1"></span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/virtual-reality.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1"></span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/rtl.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1"></span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/notifications.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1"></span>
-          </a>
-        </li>
-        <li class="nav-item mt-3">
-          <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/profile.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1"></span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/sign-in.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Sign In</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/sign-up.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Sign Up</span>
-          </a>
-        </li> -->
+          <li class="nav-item position-fixed bottom-4 max-width-200 ">
+              <a class="nav-link" href="{{route('logout')}}">
+                  <i class="material-icons"></i>
+                  <p>Logout</p>
+              </a>
+          </li>
       </ul>
     </div>
-    
+
   </aside>

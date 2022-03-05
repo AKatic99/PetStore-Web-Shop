@@ -15,17 +15,14 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            //$table->bigInteger('kategorija_id');
             $table->string('naziv_proizvoda');
             $table->longText('opis');
             $table->string('cijena');
             $table->bigInteger('kolicina');
             $table->string('slika');
-            $table->foreignId('category_id')->constrained('categories');
-
+            $table->foreignId('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreignId('subcategory_id')->references('id')->on('subcategories')->onDelete('cascade');
             $table->timestamps();
-            
-
         });
     }
 

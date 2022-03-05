@@ -7,10 +7,10 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ms-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">PAS</a>
+        <a class="nav-link" href="{{route('dogs')}}">PAS</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">MAČKA</a>
+        <a class="nav-link" href="{{route('cats')}}">MAČKA</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">PTICE</a>
@@ -29,13 +29,13 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ms-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">PRIJAVA</a>
+        <a class="nav-link" href="/login">PRIJAVA</a>
       </li>
+
       <li class="nav-item active">
-        <a class="nav-link" href="#">/</a>
+        <a class="nav-link" href="/register">REGISTRACIJA</a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">REGISTRACIJA</a>
-      </li>
+    </ul>
 </div>
+ </div>
 </nav>

@@ -10,7 +10,7 @@
     <title>
      @yield('title')
     </title>
-   
+
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
   <!-- Nucleo Icons -->
 
@@ -24,11 +24,10 @@
     <div class="content">
       @yield('content')
       <div class="content">
-     
           @include('layouts.inc.naslovna')
         </div>
     </div>
-   
+
 
 </div>
 
@@ -37,6 +36,6 @@
 
   @yield('scripts')
 
-  
+
 </body>
 </html>

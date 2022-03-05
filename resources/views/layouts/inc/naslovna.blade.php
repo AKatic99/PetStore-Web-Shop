@@ -1,3 +1,4 @@
+<div class="container">
 <div class="row row-cols-1 row-cols-md-3 g-4">
   <div class="col">
     <div class="card h-100">
@@ -33,43 +34,4 @@
 
 </div>
 </div>
-  
-<style>
-
-/*.card-image {
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: cover;
-  width: 70px;
-  height: 70px;
-  margin-left: 50px;
-}
-.card-image2 {
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: cover;
-  width: 60px;
-  height: 60px;
-  margin-left: 50px;
-}
-
-.card-image3 {
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: cover;
-  width: 110px;
-  height: 110px;
-  margin-left: 50px;
-}
-
-.card-body {
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: cover;
-  width: 200px;
-  height: 200px;
-  margin-left: 30px;
-  
-}
-
-</style> */
+</div>
