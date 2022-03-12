@@ -32,9 +32,6 @@ Route::get('/cats', [App\Http\Controllers\HomeController::class, 'showCats'])->n
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/dashboard', 'Admin\FrontendController@index')->name('dashboard');
-   // Route::get('categories', 'Admin\CategoryController@index');
-   // Route::get('add-category', 'Admin\CategoryController@add');
-   // Route::post('insert-category', 'Admin\CategoryController@insert');
 
 
     Route::get('add-category', [CategoryController::class,'add']);
