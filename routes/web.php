@@ -31,7 +31,7 @@ Route::get('/dogs', [App\Http\Controllers\HomeController::class, 'showDogs'])->n
 Route::get('/cats', [App\Http\Controllers\HomeController::class, 'showCats'])->name('cats');
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
-    Route::get('/dashboard', 'Admin\FrontendController@index');
+    Route::get('/dashboard', 'Admin\FrontendController@index')->name('dashboard');
    // Route::get('categories', 'Admin\CategoryController@index');
    // Route::get('add-category', 'Admin\CategoryController@add');
    // Route::post('insert-category', 'Admin\CategoryController@insert');
@@ -58,6 +58,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('delete-product/{id}',[ProductController::class, 'destroy']);
     Route::get('edit-product/{id}',[ProductController::class, 'edit']);
     Route::put('update-product/{id}',[ProductController::class, 'update']);
+    Route::post('get-categoryId',[ProductController::class, 'getCategoryId']);
 
 
 

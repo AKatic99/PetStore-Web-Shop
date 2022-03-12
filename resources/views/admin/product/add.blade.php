@@ -11,28 +11,21 @@
         @csrf
             <div class="row">
                <div class="col-md-12 mb-6">
-                <select class="form-select" name="category_id">
+                <select class="form-select" name="category_id" id="category">
                     <option value="">Odaberi kategoriju</option>
                     @foreach($category as $item)
                          <option value="{{ $item->id }}"> {{ $item->naziv }}</option>
-
                     @endforeach
-
                 </select>
                </div>
                 <div class="col-md-12 mb-6">
-                    <select class="form-select" name="subcategory_id">
+                    <select class="form-select" name="subcategory_id" id="subcategory">
                         <option value="">Odaberi podkategoriju</option>
-                        @foreach($subcategory as $item)
-                            <option value="{{ $item->id }}"> {{ $item->naziv }}</option>
-
-                        @endforeach
-
                     </select>
                 </div>
 
                 <div class="col-md-6 mb-6">
-                    <label for="">Naziv_proizvoda</label>
+                    <label for="">Naziv proizvoda</label>
                     <input type="text" class="form-control" name="naziv_proizvoda">
                 </div>
 

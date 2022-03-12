@@ -8,14 +8,12 @@
     </div>
     <div class="card-body">
         <form action="{{ url('insert-category') }}" method="POST" enctype="multipart/form-data">
-
             @csrf
             <div class="row">
                 <div class="col-md-12">
                     <label for="">Naziv</label>
                     <input type="text" class="form-control" name="naziv">
                 </div>
-
                <div class="col-md-12">
                    <button type="submit" class="btn btn-info mt-3"> Spremi</button>
                </div>
@@ -23,5 +21,4 @@
         </form>
     </div>
 </div>
-
 @endsection

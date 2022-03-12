@@ -57,4 +57,24 @@
   @yield('scripts')
 
 </body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function ()
+    {
+        $('#category').change(function () {
+            let cid=$(this).val();
+            $.ajax({
+                url: '/get-categoryId',
+                type: 'post',
+                data: 'cid='+cid+
+                    '&_token={{csrf_token()}}',
+                success:function (result){
+                    $('#subcategory').html(result);
+                }
+            });
+
+        });
+    });
+</script>
 </html>
