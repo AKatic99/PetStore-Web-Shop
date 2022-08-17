@@ -6,13 +6,6 @@
 
 
 
-          <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">
-          {{ __('Log out') }}
-          </a>
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                   @csrf
-          </form>
-
       </div>
 
         <!--<h6 class="font-weight-bolder mb-0">Dashboard</h6>-->

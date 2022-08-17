@@ -29,6 +29,13 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/dogs', [App\Http\Controllers\HomeController::class, 'showDogs'])->name('dogs');
 Route::get('/cats', [App\Http\Controllers\HomeController::class, 'showCats'])->name('cats');
+Route::get('/p_hrana', [App\Http\Controllers\HomeController::class, 'showP_hrana'])->name('p_hrana');
+Route::get('/p_odjeca', [App\Http\Controllers\HomeController::class, 'showP_odjeca'])->name('p_odjeca');
+Route::get('/p_igracke', [App\Http\Controllers\HomeController::class, 'showP_igracke'])->name('p_igracke');
+Route::get('/m_hrana', [App\Http\Controllers\HomeController::class, 'showM_hrana'])->name('m_hrana');
+Route::get('/m_odjeca', [App\Http\Controllers\HomeController::class, 'showM_odjeca'])->name('m_odjeca');
+Route::get('/m_igracke', [App\Http\Controllers\HomeController::class, 'showM_igracke'])->name('m_igracke');
+
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/dashboard', 'Admin\FrontendController@index')->name('dashboard');

@@ -12,12 +12,7 @@
       <li class="nav-item">
         <a class="nav-link" href="{{route('cats')}}">MAČKA</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">PTICE</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">RIBE</a>
-      </li>
+
       <li class="nav-item">
         <a class="nav-link" href="#">MALE ŽIVOTINJE</a>
       </li>
@@ -26,7 +21,9 @@
       </li>
     </ul>
   </div>
-  <div class="collapse navbar-collapse" id="navbarNav">
+
+
+ <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ms-auto">
       <li class="nav-item active">
         <a class="nav-link" href="/login">PRIJAVA</a>

@@ -1,9 +1,4 @@
-@extends('layouts.admin')
+@extends('admin.category.add')
+
 
 @section('content')
-<div class="card">
-    <div class="text">
-
-    </div>
-</div>
-@endsection

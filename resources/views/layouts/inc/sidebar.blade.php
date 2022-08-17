@@ -46,10 +46,18 @@
           </a>
        </li>
           <li class="nav-item position-fixed bottom-4 max-width-200 ">
-              <a class="nav-link" href="{{route('logout')}}">
+             <!--<a class="nav-link" href="{{route('logout')}}">
                   <i class="material-icons"></i>
                   <p>Logout</p>
               </a>
+              -->
+                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">
+                     {{ __('Log out') }}
+                 </a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+              </form>
+
           </li>
       </ul>
     </div>
