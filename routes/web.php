@@ -5,6 +5,8 @@ use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Admin\SubcategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Frontend\CartController;
+
 
 use Illuminate\Support\Facades\Auth;
 /*
@@ -35,6 +37,14 @@ Route::get('/p_igracke', [App\Http\Controllers\HomeController::class, 'showP_igr
 Route::get('/m_hrana', [App\Http\Controllers\HomeController::class, 'showM_hrana'])->name('m_hrana');
 Route::get('/m_odjeca', [App\Http\Controllers\HomeController::class, 'showM_odjeca'])->name('m_odjeca');
 Route::get('/m_igracke', [App\Http\Controllers\HomeController::class, 'showM_igracke'])->name('m_igracke');
+
+
+    Route::post('add-to-cart', [CartController::class, 'addProduct']);
+    Route::post('delete-cart-item', [CartController::class, 'deleteproduct']);
+
+    Route::middleware(['auth'])->group(function (){
+        Route::get('cart', [CartController::class, 'viewcart']);
+    });
 
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {

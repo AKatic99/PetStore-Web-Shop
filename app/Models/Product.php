@@ -23,11 +23,16 @@ class Product extends Model
 
     public function categories()
     {
-        return $this->belongsTo(Category::class, 'category_id');
+        return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 
     public function subcategories()
     {
         return $this->belongsTo(Subcategory::class, 'subcategory_id');
+    }
+
+    public function products()
+    {
+        return $this->hasMany(Cart::class);
     }
 }

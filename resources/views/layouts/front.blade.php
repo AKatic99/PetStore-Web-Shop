@@ -23,18 +23,17 @@
      @include('layouts.inc.frontnavbar')
     <div class="content">
       @yield('content')
-      <div class="content">
-          @include('layouts.inc.naslovna')
-        </div>
     </div>
-
 
 </div>
 
 
   <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
+     <script src="{{ asset('frontend/js/custom.js') }}"></script>
 
-  @yield('scripts')
+
+
+     @yield('scripts')
 
 
 </body>
