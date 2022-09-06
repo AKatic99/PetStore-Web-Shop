@@ -3,14 +3,14 @@
 @section('content')
 <div class="py-5">
 <div class="container">
-<div class ="card-deck product_data">
+<div class ="card-deck ">
 <div class="row g-9">
 
 @foreach($dogProducts as $dogProduct)
     @if($dogProduct->categories->naziv=='Pas')
             @if($dogProduct->subcategories->naziv=='Hrana')
                         <div class="col-md-3 mb-3">
-                        <div class="card p-3">
+                        <div class="card product_data p-3">
                         <img src="{{asset('assets/uploads/products/'.$dogProduct->slika)}}" class="card-img mx-auto" alt="..." style="width: 12rem; height:12rem; ">
                         <div class="card-body">
                             <h5 class="card-title text-center">{{$dogProduct->naziv_proizvoda}}</h5>

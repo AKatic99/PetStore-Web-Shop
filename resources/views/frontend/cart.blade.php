@@ -6,30 +6,41 @@
 
 @section('content')
 <div class="container my-5">
-    <div class="card shadow product_data">
+    <div class="card shadow">
         <div class="card-body">
+            @php $total = 0; @endphp
             @foreach($cartitems as $item)
-            <div class="row">
-                <div class="col-md-2">
+            <div class="row product_data ">
+                <div class=" col-md-2">
                     <img src="{{ asset('assets/uploads/products/'.$item->products->slika) }}" height="70px" width="70px" alt="Image here">
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-3">
                     <h6>{{ $item->products->naziv_proizvoda }}</h6>
+                </div>
+                <div class="col-md-2">
+                    <h6>{{ $item->products->cijena }} KM</h6>
                 </div>
                 <div class ="col-md-3">
                     <input type="hidden" class="prod_id" value="{{ $item->prod_id }}">
                     <label for="kolicina">Kolicina</label>
                     <div class="input-group text-center mb-3" style="width: 130px;">
-                        <button class ="input-group-text decrement-btn">-</button>
+                        <button class ="input-group-text changeQuantity decrement-btn">-</button>
                         <input type="text" name="kolicina" class="form-control kolicina-input text-center" value="{{ $item->prod_qty }}">
-                        <button class ="input-group-text increment-btn">+</button>
+                        <button class ="input-group-text changeQuantity increment-btn">+</button>
                     </div>
                 </div>
                 <div class="col-md-2">
                     <button class="btn btn-danger delete-cart-item"> <i class="fa fa-trash"></i> Remove </button>
                 </div>
             </div>
+                @php
+                    $total += $item->products->cijena * $item->prod_qty;
+                @endphp
             @endforeach
+        </div>
+            <div class=" card-footer">
+                <h6>Ukupna cijena : {{ $total }}</h6>
+            </div>
         </div>
     </div>
 </div>
@@ -93,21 +104,23 @@
                     $(this).closest('.product_data').find('.kolicina-input').val(value);
                 }
             });
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
             $('.delete-cart-item').click(function (e){
                 e.preventDefault();
 
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
 
                 var prod_id = $(this).closest('.product_data').find('.prod_id').val();
                 $.ajax({
                     method: "POST",
                     url: "delete-cart-item",
                     data: {
-                        'prod_id':prod_id,
+                        'prod_id': prod_id,
                     },
                     success: function (response){
                         window.location.reload();
@@ -115,10 +128,25 @@
                     }
                 });
             });
+            $('.changeQuantity').click(function (e){
+                e.preventDefault();
+
+                var prod_id = $(this).closest('.product_data').find('.prod_id').val();
+                var product_qty = $(this).closest('.product_data').find('.kolicina-input').val();
+
+                data = {
+                    'prod_id' : prod_id,
+                    'product_qty': product_qty,
+                }
+                $.ajax({
+                    method: "POST",
+                    url: "/update-cart",
+                    data : data,
+                    success: function (response){
+                        window.location.reload();
+                    }
+                });
+            });
         });
-
-
-
-
     </script>
 @endsection

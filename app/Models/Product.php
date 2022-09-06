@@ -33,6 +33,6 @@ class Product extends Model
 
     public function products()
     {
-        return $this->hasMany(Cart::class);
+        return $this->hasMany(Product::class);
     }
 }
